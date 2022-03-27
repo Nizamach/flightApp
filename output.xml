@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.11 on win32)" generated="20220323 13:53:13.771" rpa="false" schemaversion="2">
+<suite id="s1" name="Search" source="D:\Dojobox\MobileAuto\search.robot">
+<kw name="Open Flight Application" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220323 13:53:13.962" endtime="20220323 13:53:26.824"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:13.962" endtime="20220323 13:53:26.824"/>
+</kw>
+<test id="s1-t1" name="Search Flight">
+<kw name="Login With Valid Username" library="login" type="SETUP">
+<kw name="Click Login Button" library="login">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.example.myapplication:id/login</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220323 13:53:26.832" level="INFO">Clicking element 'id=com.example.myapplication:id/login'.</msg>
+<status status="PASS" starttime="20220323 13:53:26.828" endtime="20220323 13:53:27.405"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:26.827" endtime="20220323 13:53:27.405"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.example.myapplication:id/username</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220323 13:53:27.405" endtime="20220323 13:53:29.629"/>
+</kw>
+<kw name="Input Username" library="login">
+<arg>username=support@ngendigital.com</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=com.example.myapplication:id/username</arg>
+<arg>${username}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220323 13:53:29.631" level="INFO">Typing text 'support@ngendigital.com' into text field 'id=com.example.myapplication:id/username'</msg>
+<status status="PASS" starttime="20220323 13:53:29.629" endtime="20220323 13:53:29.698"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:29.629" endtime="20220323 13:53:29.698"/>
+</kw>
+<kw name="Input Password" library="login">
+<arg>password=abc123</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=com.example.myapplication:id/password</arg>
+<arg>${password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220323 13:53:29.700" level="INFO">Typing text 'abc123' into text field 'id=com.example.myapplication:id/password'</msg>
+<status status="PASS" starttime="20220323 13:53:29.699" endtime="20220323 13:53:30.234"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:29.698" endtime="20220323 13:53:30.235"/>
+</kw>
+<kw name="Click Signin Button" library="login">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.example.myapplication:id/signIn</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220323 13:53:30.237" level="INFO">Clicking element 'id=com.example.myapplication:id/signIn'.</msg>
+<status status="PASS" starttime="20220323 13:53:30.235" endtime="20220323 13:53:30.777"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:30.235" endtime="20220323 13:53:30.777"/>
+</kw>
+<kw name="Verify Login Passed" library="login">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.example.myapplication:id/textView</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220323 13:53:30.777" endtime="20220323 13:53:32.023"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:30.777" endtime="20220323 13:53:32.023"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:26.826" endtime="20220323 13:53:32.023"/>
+</kw>
+<kw name="Click Search Button">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.example.myapplication:id/search_flight</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220323 13:53:32.025" level="INFO">Clicking element 'id=com.example.myapplication:id/search_flight'.</msg>
+<status status="PASS" starttime="20220323 13:53:32.024" endtime="20220323 13:53:32.069"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>com.example.myapplication:id/flight_number</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220323 13:53:32.069" endtime="20220323 13:53:34.316"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:32.024" endtime="20220323 13:53:34.318"/>
+</kw>
+<kw name="Input flight Code">
+<arg>flightCode=DA935</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>com.example.myapplication:id/flight_number</arg>
+<arg>${flightCode}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220323 13:53:34.320" level="INFO">Typing text 'DA935' into text field 'com.example.myapplication:id/flight_number'</msg>
+<status status="PASS" starttime="20220323 13:53:34.318" endtime="20220323 13:53:34.387"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.example.myapplication:id/searchFlight</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220323 13:53:34.387" endtime="20220323 13:53:34.906"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:34.318" endtime="20220323 13:53:34.906"/>
+</kw>
+<kw name="Click Button Search">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.example.myapplication:id/searchFlight</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220323 13:53:34.909" level="INFO">Clicking element 'id=com.example.myapplication:id/searchFlight'.</msg>
+<status status="PASS" starttime="20220323 13:53:34.907" endtime="20220323 13:53:34.961"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:34.907" endtime="20220323 13:53:34.961"/>
+</kw>
+<kw name="Page Contains">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>class=android.widget.TextView</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20220323 13:53:35.102" level="INFO">Current page contains element 'class=android.widget.TextView'.</msg>
+<status status="PASS" starttime="20220323 13:53:34.962" endtime="20220323 13:53:35.102"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:34.961" endtime="20220323 13:53:35.102"/>
+</kw>
+<status status="PASS" starttime="20220323 13:53:26.825" endtime="20220323 13:53:35.103"/>
+</test>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220323 13:53:35.107" endtime="20220323 13:53:35.831"/>
+</kw>
+<doc>Sign in test cases</doc>
+<status status="PASS" starttime="20220323 13:53:13.773" endtime="20220323 13:53:35.831"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Search">Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
